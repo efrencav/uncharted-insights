@@ -588,8 +588,55 @@
   .core-sub { font-size: 16px; color: var(--gray-2); line-height: 1.6; }
 
 
+  /* ─── PMV ─── */
+  .pmv-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; align-items: stretch;
+  }
+  .pmv-card {
+    background: rgba(20, 44, 76, 0.5);
+    border: 1px solid rgba(28, 117, 188, 0.15);
+    border-radius: 4px; padding: 40px 36px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .pmv-card:hover {
+    border-color: rgba(6, 148, 148, 0.4);
+    transform: translateY(-4px);
+  }
+  .pmv-card-center {
+    background: rgba(28, 117, 188, 0.08);
+    border-color: rgba(28, 117, 188, 0.3);
+  }
+  .pmv-card-center:hover { border-color: rgba(28, 117, 188, 0.6); }
+  .pmv-icon {
+    width: 52px; height: 52px;
+    background: rgba(6, 148, 148, 0.1);
+    border-radius: 8px; display: flex;
+    align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .pmv-card-center .pmv-icon { background: rgba(28, 117, 188, 0.12); }
+  .pmv-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 13px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 12px;
+  }
+  .pmv-card-center .pmv-label { color: var(--blue); }
+  .pmv-rule {
+    width: 40px; height: 2px;
+    background: var(--teal); margin-bottom: 20px;
+  }
+  .pmv-card-center .pmv-rule { background: var(--blue); }
+  .pmv-text {
+    font-size: 16px; line-height: 1.8;
+    color: var(--gray-1); font-weight: 300;
+  }
+  @media (max-width: 900px) { .pmv-grid { grid-template-columns: 1fr; } }
+
+  /* ─── DIFFERENTIATOR ─── */
   .differentiator-grid {
-    display: grid; grid-template-columns: 1fr 280px 1fr;
     gap: 24px; align-items: center; margin-top: 48px;
   }
   .diff-card {
@@ -677,6 +724,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo"><img src="assets/img/logo.png" alt="Uncharted Insights" height="64"></a>
     <ul class="nav-links">
+      <li><a href="#pmv">Philosophy</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#process">Process</a></li>
@@ -762,6 +810,40 @@
     <div class="marquee-item"><div class="marquee-dot"></div>Human Advantage</div>
   </div>
 </div>
+
+<!-- PMV -->
+<section id="pmv" style="background: var(--navy);">
+  <div class="container">
+    <div class="section-label reveal" style="justify-content: center; margin-bottom: 16px;">Our Foundation</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align: center; margin-bottom: 64px;">Purpose, Mission<br>&amp; Vision</h2>
+    <div class="pmv-grid">
+      <div class="pmv-card reveal reveal-delay-1">
+        <div class="pmv-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div class="pmv-label">Purpose</div>
+        <div class="pmv-rule"></div>
+        <p class="pmv-text">To unlock the uniquely human capabilities that will differentiate how organizations lead, decide, and create value in the age of AI.</p>
+      </div>
+      <div class="pmv-card pmv-card-center reveal reveal-delay-2">
+        <div class="pmv-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1c75bc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="pmv-label">Mission</div>
+        <div class="pmv-rule"></div>
+        <p class="pmv-text">We partner with leaders and organizations to build and embed human core capabilities into strategy, talent, and decision systems in the age of AI.</p>
+      </div>
+      <div class="pmv-card reveal reveal-delay-3">
+        <div class="pmv-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="pmv-label">Vision</div>
+        <div class="pmv-rule"></div>
+        <p class="pmv-text">Organizations where AI augments human capability to accelerate performance, sharpen judgement, and unlock lasting value.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services" style="background: rgba(13,30,51,0.6);">
