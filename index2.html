@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uncharted Insights — Navigate What's Next</title>
-<link rel="icon" type="image/png" href="assets/img/favicon_48x48.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Barlow+Condensed:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -564,90 +563,17 @@
     to { opacity: 1; transform: translateY(0); }
   }
   .reveal {
-    opacity: 0; transform: translateY(30px);
-    animation: revealIn 0.7s ease forwards;
-  }
-  @keyframes revealIn {
-    to { opacity: 1; transform: none; }
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
-  .reveal-delay-1 { animation-delay: 0.1s; }
-  .reveal-delay-2 { animation-delay: 0.2s; }
-  .reveal-delay-3 { animation-delay: 0.3s; }
-  .reveal-delay-4 { animation-delay: 0.4s; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
 
 
   /* Mobile */
-  .human-core-list { display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 1; }
-  .core-item { display: flex; gap: 12px; align-items: flex-start; }
-  .core-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--teal); flex-shrink: 0; margin-top: 5px;
-  }
-  .core-title { font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-  .core-sub { font-size: 16px; color: var(--gray-2); line-height: 1.6; }
-
-
-  .differentiator-grid {
-    display: grid; grid-template-columns: 1fr 280px 1fr;
-    gap: 24px; align-items: center; margin-top: 48px;
-  }
-  .diff-card {
-    background: rgba(20,44,76,0.5);
-    border: 1px solid rgba(28,117,188,0.15);
-    border-radius: 4px; padding: 32px 28px;
-    text-align: left;
-  }
-  .diff-card-center {
-    background: rgba(6,148,148,0.08);
-    border: 1px solid rgba(6,148,148,0.35);
-    border-radius: 4px; padding: 32px 28px;
-    text-align: center;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-  }
-  .diff-not {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--coral, #F36C39);
-    margin-bottom: 8px;
-  }
-  .diff-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 20px;
-    text-transform: uppercase; color: var(--white);
-    margin-bottom: 12px;
-  }
-  .diff-desc { font-size: 13px; color: var(--gray-2); line-height: 1.7; }
-  .diff-center-label {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--teal);
-    margin-bottom: 16px;
-  }
-  .diff-center-quote {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 72px; font-weight: 900;
-    color: var(--teal); opacity: 0.3;
-    line-height: 0.6; margin-bottom: 20px;
-  }
-  .diff-belief {
-    font-size: 15px; font-style: italic; color: var(--white);
-    line-height: 1.8; font-weight: 300;
-  }
-  .diff-center-rule {
-    width: 40px; height: 1px;
-    background: rgba(6,148,148,0.4);
-    margin: 20px auto;
-  }
-  .diff-center-sig {
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.1em; color: var(--teal);
-    text-transform: uppercase;
-  }
-  @media (max-width: 900px) {
-    .differentiator-grid { grid-template-columns: 1fr; }
-  }
-
-
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     nav.scrolled { padding: 14px 24px; }
@@ -699,15 +625,15 @@
 
   <div class="hero-inner container">
   <div class="hero-content" style="position:relative;z-index:1;">
-    <div class="hero-eyebrow">Navigating the Human Element of AI</div>
+    <div class="hero-eyebrow">Strategic Business Intelligence</div>
     <h1 class="hero-headline">
-      Charting the Path<br>
-      <em>to Human Advantage</em>
+      Navigate<br>
+      <em>What's Next</em>
     </h1>
-    <p class="hero-sub">We help leaders build the human core capabilities of judgment, accountability, and strategic thinking required to thrive in an AI-augmented world.</p>
+    <p class="hero-sub">We transform raw data into strategic clarity — giving leaders the confidence to make decisions that move markets, not just metrics.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Book a Discovery Call</a>
-      <a href="#services" class="btn-ghost">Explore the Framework</a>
+      <a href="#contact" class="btn-primary">Start Your Journey</a>
+      <a href="#services" class="btn-ghost">Explore Services</a>
     </div>
   </div><!-- end hero-content -->
 
@@ -743,23 +669,23 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track" id="marquee">
-    <div class="marquee-item"><div class="marquee-dot"></div>Human Core Capabilities</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>AI Readiness Diagnostic</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Integrative Judgment</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Moral Accountability</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Strategic Reflex</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Talent Architecture</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Conscious Agency</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Human Advantage</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Market Intelligence</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Strategic Planning</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Competitive Analysis</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Growth Mapping</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Risk Navigation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Revenue Intelligence</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Data Visualization</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Executive Advisory</div>
     <!-- duplicate for seamless loop -->
-    <div class="marquee-item"><div class="marquee-dot"></div>Human Core Capabilities</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>AI Readiness Diagnostic</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Integrative Judgment</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Moral Accountability</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Strategic Reflex</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Talent Architecture</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Conscious Agency</div>
-    <div class="marquee-item"><div class="marquee-dot"></div>Human Advantage</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Market Intelligence</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Strategic Planning</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Competitive Analysis</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Growth Mapping</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Risk Navigation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Revenue Intelligence</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Data Visualization</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Executive Advisory</div>
   </div>
 </div>
 
@@ -767,110 +693,91 @@
 <section id="services" style="background: rgba(13,30,51,0.6);">
   <div class="container">
   <div class="section-label reveal">Our Expertise</div>
-  <h2 class="section-title reveal reveal-delay-1">What We Help<br>You Chart</h2>
+  <h2 class="section-title reveal reveal-delay-1">What We<br>Chart For You</h2>
   <div class="services-grid">
     <div class="service-card reveal reveal-delay-1">
       <div class="service-num">01</div>
       <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
       </div>
-      <div class="service-title">AI Readiness & Human Diagnostic</div>
-      <div class="service-desc">We map your current terrain to identify where human capability gaps will stall AI adoption. We move beyond technical readiness to ensure your people are cognitively and culturally prepared for the shift.</div>
+      <div class="service-title">Market Intelligence</div>
+      <div class="service-desc">Deep-dive analysis of market dynamics, emerging trends, and competitive landscapes to position your organization ahead of the curve.</div>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <div class="service-num">02</div>
       <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 5 5"/><path d="M12 12a9 9 0 0 0 9 9H3a9 9 0 0 0 9-9z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
       </div>
-      <div class="service-title">Human Core Capability Design</div>
-      <div class="service-desc">We define and embed the durable, uniquely human skills — moral accountability, meaning-making — into your talent systems. This includes identifying cognitive thinking styles to optimize team performance.</div>
+      <div class="service-title">Strategic Advisory</div>
+      <div class="service-desc">Executive-level guidance that translates complex data into decisive action — helping leaders move with confidence through uncertainty.</div>
     </div>
     <div class="service-card reveal reveal-delay-3">
       <div class="service-num">03</div>
       <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M9 15h.01"/><path d="M15 15h.01"/></svg>
       </div>
-      <div class="service-title">Strategy & Talent Architecture</div>
-      <div class="service-desc">We redesign job roles and capability frameworks for an AI-enabled world — transitioning from legacy workforce models to a system where human judgment is the primary differentiator and value-driver.</div>
+      <div class="service-title">Growth Mapping</div>
+      <div class="service-desc">Systematic identification of untapped revenue channels, expansion opportunities, and scalable growth pathways tailored to your model.</div>
     </div>
     <div class="service-card reveal reveal-delay-1">
       <div class="service-num">04</div>
       <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.24 7.76 2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M12 18v4"/><path d="m7.76 16.24-2.83 2.83"/><path d="M6 12H2"/><path d="m4.93 4.93 2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>
       </div>
-      <div class="service-title">Executive & Team Workshops</div>
-      <div class="service-desc">Facilitated sessions designed for visionaries and transformation leaders. We move from "exploratory conversation" to "strategic reflex," helping your team align on how to integrate AI without losing the human core.</div>
+      <div class="service-title">Risk Navigation</div>
+      <div class="service-desc">Proactive scenario modeling and risk frameworks that protect your organization while preserving the agility to capitalize on change.</div>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <div class="service-num">05</div>
       <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
       </div>
-      <div class="service-title">Strategic Thought Partnership</div>
-      <div class="service-desc">Ongoing advisory for leaders navigating the uncharted territory of AI transformation. We provide the clarity needed to make high-stakes decisions when the noise of the market is at its loudest.</div>
+      <div class="service-title">Custom Research</div>
+      <div class="service-desc">Bespoke research engagements built around your specific questions — delivering insight that generic reports simply cannot provide.</div>
     </div>
-    <div class="service-card reveal reveal-delay-3" style="background: rgba(6,148,148,0.06); border: 1px solid rgba(6,148,148,0.2);">
-      <div class="service-num" style="color: rgba(6,148,148,0.15);">→</div>
-      <div class="service-title" style="color: var(--teal); font-size: 18px; margin-top: 16px;">Start With a Workshop</div>
-      <div class="service-desc" style="margin-top: 12px;">The Executive & Team Workshop is the ideal entry point. It's designed to move your leadership team from awareness to action in a single high-impact session.</div>
-      <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 24px; padding: 12px 24px; font-size: 12px;">Book a Discovery Call</a>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">06</div>
+      <div class="service-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#069494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="service-title">Executive Workshops</div>
+      <div class="service-desc">Facilitated sessions that align leadership teams, surface hidden assumptions, and generate consensus around strategic priorities.</div>
     </div>
   </div>
-  </div><!-- end container -->
+  </div>
 </section>
 
 <!-- ABOUT -->
 <div class="about-section" id="about">
   <div class="about-visual">
     <div class="about-visual-bg"></div>
-    <div class="section-label reveal" style="color: var(--teal);">What We Help You Unlock</div>
-    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 16px;">The Human<br>Core</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: var(--gray-2); font-weight: 300; margin-bottom: 28px; position: relative; z-index: 1;">Durable, uniquely human capabilities AI cannot replicate. When strengthened, organizations move from strategy to reflex.</p>
-    <div class="human-core-list reveal reveal-delay-2">
-      <div class="core-item">
-        <div class="core-dot"></div>
-        <div>
-          <div class="core-title">Moral Accountability</div>
-          <div class="core-sub">The courage to bear responsibility for outcomes in an automated world.</div>
-        </div>
+    <div class="section-label reveal" style="color: var(--teal);">By the Numbers</div>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 16px;">Results<br>That Land</h2>
+    <div class="about-chart">
+      <div class="chart-bar-wrap reveal reveal-delay-1">
+        <div class="chart-bar-label"><span>Client Revenue Growth</span><span>+34% avg.</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 82%;"></div></div>
       </div>
-      <div class="core-item">
-        <div class="core-dot"></div>
-        <div>
-          <div class="core-title">Integrative Judgment</div>
-          <div class="core-sub">Synthesizing complex patterns and lived experience into decisive action.</div>
-        </div>
+      <div class="chart-bar-wrap reveal reveal-delay-2">
+        <div class="chart-bar-label"><span>Market Share Identified</span><span>+19% avg.</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 67%;"></div></div>
       </div>
-      <div class="core-item">
-        <div class="core-dot"></div>
-        <div>
-          <div class="core-title">Meaning-Making</div>
-          <div class="core-sub">Creating narrative coherence and purpose that drives human performance.</div>
-        </div>
+      <div class="chart-bar-wrap reveal reveal-delay-3">
+        <div class="chart-bar-label"><span>Decision Speed</span><span>2.4× faster</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 90%;"></div></div>
       </div>
-      <div class="core-item">
-        <div class="core-dot"></div>
-        <div>
-          <div class="core-title">Conscious Agency</div>
-          <div class="core-sub">Setting intentional goals and ethical boundaries technology cannot define.</div>
-        </div>
-      </div>
-      <div class="core-item">
-        <div class="core-dot"></div>
-        <div>
-          <div class="core-title">Thinking Style Complementarity</div>
-          <div class="core-sub">Aligning divergent, analytic, and integrative thinkers with AI tools.</div>
-        </div>
+      <div class="chart-bar-wrap reveal reveal-delay-4">
+        <div class="chart-bar-label"><span>Strategic Objectives Met</span><span>91%</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 91%;"></div></div>
       </div>
     </div>
   </div>
   <div class="about-content">
-    <div class="section-label reveal">The Architect of Human Advantage</div>
-    <h2 class="section-title reveal reveal-delay-1" style="font-size: clamp(32px,4vw,52px);">Insight Is<br>Our Compass</h2>
-    <p class="about-body reveal reveal-delay-2">Most organizations already have the answers they're looking for — they are just buried in legacy processes and unexamined habits. Uncharted Insights was founded by Jim Read to help leaders surface these hidden capabilities and translate them into sustainable performance.</p>
-    <p class="about-body reveal reveal-delay-2" style="margin-top: 0;"><strong style="color: var(--white); font-weight: 600;">A Career of Building and Fixing.</strong> Jim's journey spans over 25 years of leading high-stakes transformations at ConocoPhillips — from overseeing $1B shipbuilding projects as a Naval Architect to establishing global Learning Centers of Excellence, navigating the intersection of strategy, finance, and talent across 15+ diverse functions.</p>
-    <p class="about-body reveal reveal-delay-3"><strong style="color: var(--white); font-weight: 600;">The Uncharted Philosophy.</strong> Jim is a "Strategic Refiner" who believes that as AI handles more of the work, the remaining human decisions become the most critical ones. He helps SMEs design the human systems that allow them to thrive — not just survive — in the age of AI.</p>
-    <a href="#contact" class="btn-primary reveal reveal-delay-3">Work With Jim</a>
+    <div class="section-label reveal">Who We Are</div>
+    <h2 class="section-title reveal reveal-delay-1">Insight Is<br>Our Compass</h2>
+    <p class="about-body reveal reveal-delay-2">Uncharted Insights was built for leaders who refuse to navigate the future on guesswork. We combine rigorous research methodology with executive-level strategic thinking to deliver intelligence that actually moves the needle.<br><br>
+    Based in Houston, TX, we serve growth-stage companies and established enterprises across 15+ industries — each time bringing the same obsession with clarity, precision, and actionable output.</p>
+    <a href="#contact" class="btn-primary reveal reveal-delay-3">Work With Us</a>
   </div>
 </div>
 
@@ -883,51 +790,67 @@
     <div class="process-step reveal reveal-delay-1">
       <div class="step-circle"><span class="step-num">01</span></div>
       <div class="step-title">Discovery</div>
-      <div class="step-desc">We map your current terrain to identify where human capability gaps will stall AI adoption and where your greatest uncaptured opportunities live.</div>
+      <div class="step-desc">We map your current terrain — understanding your market position, competitive pressures, and strategic blind spots.</div>
     </div>
     <div class="process-step reveal reveal-delay-2">
       <div class="step-circle"><span class="step-num">02</span></div>
-      <div class="step-title">Design</div>
-      <div class="step-desc">A 2-to-6 week collaborative phase where we architect a custom workshop and framework tailored to your specific business unit and strategic goals.</div>
+      <div class="step-title">Research</div>
+      <div class="step-desc">Deep intelligence gathering across primary and secondary sources, proprietary datasets, and expert networks.</div>
     </div>
     <div class="process-step reveal reveal-delay-3">
       <div class="step-circle"><span class="step-num">03</span></div>
-      <div class="step-title">Workshop</div>
-      <div class="step-desc">A high-impact half-day or full-day session that aligns your team on the human core capabilities needed to lead and decide alongside AI.</div>
+      <div class="step-title">Analysis</div>
+      <div class="step-desc">Synthesis and modeling that converts raw findings into clear strategic narratives and ranked opportunity maps.</div>
     </div>
     <div class="process-step reveal reveal-delay-4">
       <div class="step-circle"><span class="step-num">04</span></div>
-      <div class="step-title">Reinforcement</div>
-      <div class="step-desc">Ongoing advisory and system integration to ensure new reflexes are embedded into your strategy, talent, and decision systems.</div>
+      <div class="step-title">Navigation</div>
+      <div class="step-desc">Actionable roadmaps, executive presentations, and ongoing advisory to keep your organization moving forward.</div>
     </div>
   </div>
-  </div><!-- end container -->
+  </div>
 </section>
 
-<!-- DIFFERENTIATOR -->
-<section style="background: rgba(6,148,148,0.06); border-top: 1px solid rgba(6,148,148,0.2); border-bottom: 1px solid rgba(6,148,148,0.2);">
-  <div style="max-width: 860px; margin: 0 auto; text-align: center;">
-    <div class="section-label reveal" style="justify-content: center;">A Different Kind of Partnership</div>
-    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 32px; font-size: clamp(36px,5vw,64px);">We Don't Teach Prompting.<br><span style="color: var(--teal);">We Build the People<br>Who Do the Thinking.</span></h2>
-    <div class="differentiator-grid reveal reveal-delay-2">
-      <div class="diff-card">
-        <div class="diff-not">We are not</div>
-        <div class="diff-label">AI Tooling Implementers</div>
-        <div class="diff-desc">We don't configure software or deploy platforms. We build the human systems that make every tool decision more intelligent.</div>
-      </div>
-      <div class="diff-card diff-card-center">
-        <div class="diff-center-label">Our Belief</div>
-        <div class="diff-center-quote">"</div>
-        <div class="diff-belief">We believe your greatest breakthroughs already exist — they're just uncharted.</div>
-        <div class="diff-center-rule"></div>
-        <div class="diff-center-sig">— Jim Read, Founder</div>
-      </div>
-      <div class="diff-card">
-        <div class="diff-not">We are not</div>
-        <div class="diff-label">Generic Leadership Coaches</div>
-        <div class="diff-desc">We don't run generic programs. We embed strategic capability into the specific context of your business and your AI transformation.</div>
+<!-- TESTIMONIALS -->
+<section style="background: rgba(13,30,51,0.4);">
+  <div class="container">
+  <div class="section-label reveal">Client Voices</div>
+  <h2 class="section-title reveal reveal-delay-1">Trusted By<br>Bold Leaders</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Uncharted Insights gave us a clear view of a market shift that our internal team had completely missed. Their work directly informed a pivot that added $2M in revenue.</p>
+      <div class="quote-author">
+        <div class="author-avatar">MR</div>
+        <div>
+          <div class="author-name">Marcus Reid</div>
+          <div class="author-role">CEO, Meridian Capital Group</div>
+        </div>
       </div>
     </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">The strategic clarity they brought to our leadership offsite was transformative. For the first time, our entire executive team was rowing in the same direction.</p>
+      <div class="quote-author">
+        <div class="author-avatar">SL</div>
+        <div>
+          <div class="author-name">Sandra Lee</div>
+          <div class="author-role">COO, Vantage Health Systems</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">I've worked with big-name consulting firms. Uncharted Insights delivered faster, went deeper, and gave us recommendations we could actually execute.</p>
+      <div class="quote-author">
+        <div class="author-avatar">JP</div>
+        <div>
+          <div class="author-name">James Porter</div>
+          <div class="author-role">Founder, Apex Industrial Solutions</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -936,8 +859,8 @@
   <div class="cta-bg"></div>
   <div class="cta-content">
     <div class="section-label reveal" style="justify-content: center;">Ready to Begin</div>
-    <h2 class="cta-title reveal reveal-delay-1">Ready to Chart<br><span>Your Human Advantage?</span></h2>
-    <p class="cta-sub reveal reveal-delay-2">Start with a Discovery Call. In 30 minutes, we'll identify your most critical human capability gaps and explore whether a workshop engagement is the right fit.</p>
+    <h2 class="cta-title reveal reveal-delay-1">Chart Your<br><span>Next Move</span></h2>
+    <p class="cta-sub reveal reveal-delay-2">Stop navigating blind. Let's map the intelligence you need to lead with confidence.</p>
     <div class="cta-buttons reveal reveal-delay-3">
       <a href="mailto:Unchartedinsights@outlook.com" class="btn-primary">Book a Discovery Call</a>
       <a href="tel:8323969990" class="btn-ghost" style="color: var(--gray-1);">832-396-9990</a>
@@ -961,7 +884,7 @@
 </footer>
 <div class="footer-bottom">© 2026 Uncharted Insights. All rights reserved.</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav scroll behavior
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -983,4 +906,13 @@
   reveals.forEach(el => observer.observe(el));
 
   // Also trigger chart bars when their containers become visible
-  const barFi
+  const barFills = document.querySelectorAll('.chart-bar-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('animate');
+    });
+  }, { threshold: 0.3 });
+  barFills.forEach(el => barObserver.observe(el));
+</script>
+</body>
+</html>
