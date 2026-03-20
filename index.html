@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
@@ -118,9 +119,16 @@
     --terracotta: #C37769;
   }
 
+
+  /* ── Cross-browser CSS variable fallbacks ── */
+  @supports not (color: var(--fake)) {
+    body { background: #0d1e33; color: #fafafa; }
+    a { color: #1c75bc; }
+  }
+
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; } /* Polyfilled for Safari/Edge via JS above */
 
   .container {
     max-width: 1280px;
@@ -140,6 +148,7 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(13, 30, 51, 0.92);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(28, 117, 188, 0.15);
     transition: background 0.4s ease, border-color 0.4s ease;
@@ -151,6 +160,7 @@
   }
   nav.scrolled {
     background: rgba(8, 15, 26, 0.98);
+    -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(28, 117, 188, 0.3);
   }
@@ -166,7 +176,7 @@
     color: var(--gray-1); text-decoration: none;
     font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    -webkit-transition: color 0.2s; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--teal); }
   .nav-cta {
@@ -175,15 +185,15 @@
     font-size: 13px; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    -webkit-transition: background 0.2s, -webkit-transform 0.2s; transition: background 0.2s, transform 0.2s;
   }
   .nav-cta:hover { background: var(--teal); transform: translateY(-1px); }
 
   /* ─── HERO ─── */
   .hero {
     position: relative; min-height: 100vh;
-    display: flex; flex-direction: column;
-    justify-content: center;
+    display: -webkit-box; display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column;
+    -webkit-justify-content: center; justify-content: center;
     padding: 120px 0 80px;
     overflow: hidden;
   }
@@ -209,7 +219,7 @@
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, var(--blue), var(--teal), transparent 60%);
+    background: -webkit-linear-gradient(135deg, var(--blue), var(--teal), transparent 60%); background: linear-gradient(135deg, var(--blue), var(--teal), transparent 60%);
     border-radius: 6px;
     z-index: 0;
   }
@@ -261,7 +271,7 @@
     background:
       radial-gradient(ellipse 80% 60% at 70% 50%, rgba(6, 148, 148, 0.12) 0%, transparent 70%),
       radial-gradient(ellipse 60% 80% at 20% 80%, rgba(28, 117, 188, 0.15) 0%, transparent 60%),
-      linear-gradient(135deg, #0d1e33 0%, #142c4c 50%, #0d1e33 100%);
+      -webkit-linear-gradient(135deg, #0d1e33 0%, #142c4c 50%, #0d1e33 100%); linear-gradient(135deg, #0d1e33 0%, #142c4c 50%, #0d1e33 100%);
   }
 
   .hero-grid {
@@ -270,6 +280,7 @@
       linear-gradient(rgba(28, 117, 188, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(28, 117, 188, 0.06) 1px, transparent 1px);
     background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
   }
 
@@ -283,12 +294,13 @@
     border: 1px solid var(--blue);
     top: 50%; left: 50%; transform: translate(-50%, -50%);
   }
-  .ring:nth-child(1) { width: 200px; height: 200px; animation: spin 20s linear infinite; }
-  .ring:nth-child(2) { width: 380px; height: 380px; animation: spin 35s linear infinite reverse; border-style: dashed; }
-  .ring:nth-child(3) { width: 560px; height: 560px; animation: spin 50s linear infinite; }
-  .ring:nth-child(4) { width: 700px; height: 700px; border-color: var(--teal); border-style: dashed; animation: spin 70s linear infinite reverse; }
+  .ring:nth-child(1) { width: 200px; height: 200px; -webkit-animation: spin 20s linear infinite; animation: spin 20s linear infinite; }
+  .ring:nth-child(2) { width: 380px; height: 380px; -webkit--webkit-animation: spin 35s linear infinite reverse; animation: spin 35s linear infinite reverse; border-style: dashed; }
+  .ring:nth-child(3) { width: 560px; height: 560px; -webkit-animation: spin 50s linear infinite; animation: spin 50s linear infinite; }
+  .ring:nth-child(4) { width: 700px; height: 700px; border-color: var(--teal); border-style: dashed; -webkit-animation: spin 70s linear infinite reverse; animation: spin 70s linear infinite reverse; }
 
-  @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+  @-webkit-keyframes spin { to { -webkit-transform: translate(-50%, -50%) rotate(360deg); transform: translate(-50%, -50%) rotate(360deg); } }
+  @keyframes spin { to { -webkit-transform: translate(-50%, -50%) rotate(360deg); transform: translate(-50%, -50%) rotate(360deg); } }
 
   .hero-content { position: relative; z-index: 1; max-width: 800px; }
 
@@ -346,7 +358,7 @@
     color: var(--gray-1); text-decoration: none;
     font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
     text-transform: uppercase; display: flex; align-items: center; gap: 8px;
-    transition: color 0.2s;
+    -webkit-transition: color 0.2s; transition: color 0.2s;
   }
   .btn-ghost:hover { color: var(--white); }
   .btn-ghost::after { content: '→'; transition: transform 0.2s; }
@@ -380,8 +392,8 @@
   }
   .marquee-track {
     display: flex; gap: 64px;
-    animation: marquee 30s linear infinite;
-    width: max-content;
+    -webkit-animation: marquee 30s linear infinite; animation: marquee 30s linear infinite;
+    width: -webkit-max-content; width: max-content;
   }
   .marquee-item {
     display: flex; align-items: center; gap: 16px;
@@ -390,7 +402,8 @@
     white-space: nowrap;
   }
   .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-  @keyframes marquee { to { transform: translateX(-50%); } }
+  @-webkit-keyframes marquee { to { -webkit-transform: translateX(-50%); transform: translateX(-50%); } }
+  @keyframes marquee { to { -webkit-transform: translateX(-50%); transform: translateX(-50%); } }
 
   /* ─── SERVICES ─── */
   section { padding: 120px 0; }
@@ -430,7 +443,7 @@
     bottom: 0; left: 0; right: 0; height: 3px;
     background: var(--blue);
     transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s ease;
+    -webkit-transition: -webkit-transform 0.4s ease; transition: transform 0.4s ease;
   }
   .service-card:hover::before { transform: scaleX(1); }
   .service-card:hover { background: rgba(20, 44, 76, 0.7); }
@@ -497,7 +510,7 @@
   }
   .chart-bar-fill {
     height: 100%; border-radius: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--teal));
+    background: -webkit-linear-gradient(left, var(--blue), var(--teal)); background: linear-gradient(90deg, var(--blue), var(--teal));
     transform: scaleX(0); transform-origin: left;
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -562,7 +575,7 @@
     border: 1px solid rgba(28, 117, 188, 0.12);
     border-radius: 2px;
     position: relative;
-    transition: border-color 0.3s, transform 0.3s;
+    -webkit-transition: border-color 0.3s, -webkit-transform 0.3s; transition: border-color 0.3s, transform 0.3s;
   }
   .testimonial-card:hover {
     border-color: rgba(6, 148, 148, 0.4);
@@ -654,16 +667,23 @@
   }
 
   /* ─── ANIMATIONS ─── */
+  @-webkit-keyframes fadeUp {
+    from { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+  }
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
   }
   .reveal {
-    opacity: 0; transform: translateY(30px);
-    animation: revealIn 0.7s ease forwards;
+    opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px);
+    -webkit-animation: revealIn 0.7s ease forwards; animation: revealIn 0.7s ease forwards;
+  }
+  @-webkit-keyframes revealIn {
+    to { opacity: 1; -webkit-transform: none; transform: none; }
   }
   @keyframes revealIn {
-    to { opacity: 1; transform: none; }
+    to { opacity: 1; -webkit-transform: none; transform: none; }
   }
   .reveal.visible { opacity: 1; transform: none; }
   .reveal-delay-1 { animation-delay: 0.1s; }
@@ -693,7 +713,7 @@
     border: 1px solid rgba(28, 117, 188, 0.15);
     border-radius: 4px; padding: 40px 36px;
     display: flex; flex-direction: column;
-    transition: border-color 0.3s, transform 0.3s;
+    -webkit-transition: border-color 0.3s, -webkit-transform 0.3s; transition: border-color 0.3s, transform 0.3s;
   }
   .pmv-card:hover {
     border-color: rgba(6, 148, 148, 0.4);
@@ -812,6 +832,30 @@
     .hero-stats { display: none; }
   }
 </style>
+
+<!-- Normalize.css — cross-browser style baseline -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+<!-- Polyfills for older browsers -->
+<script>
+/* CSS custom properties fallback for IE11 */
+if (typeof CSS === 'undefined' || !CSS.supports('color', 'var(--fake)')) {
+  document.documentElement.style.setProperty = function(){};
+}
+/* IntersectionObserver polyfill */
+if (!('IntersectionObserver' in window)) {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}
+/* Smooth scroll polyfill for Safari/Edge */
+if (!('scrollBehavior' in document.documentElement.style)) {
+  var script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js';
+  document.head.appendChild(script);
+}
+</script>
+
 </head>
 <body>
 
@@ -861,7 +905,7 @@
       <div class="hero-jim-badge">
         <div class="hero-jim-badge-name">Jim Read</div>
         <div class="hero-jim-badge-title">Founder &amp; Principal Consultant</div>
-        <div class="hero-jim-badge-loc">📍 Houston, TX</div>
+        <div class="hero-jim-badge-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Houston, TX</div>
       </div>
     </div>
   </div>
@@ -1103,7 +1147,7 @@
     <h2 class="cta-title reveal reveal-delay-1">Ready to Chart<br><span>Your Human Advantage?</span></h2>
     <p class="cta-sub reveal reveal-delay-2">Start with a Discovery Call. In 30 minutes, we'll identify your most critical human capability gaps and explore whether a workshop engagement is the right fit.</p>
     <div class="cta-buttons reveal reveal-delay-3">
-      <a href="mailto:Unchartedinsights@outlook.com" class="btn-primary">Book a Discovery Call</a>
+      <a href="/cdn-cgi/l/email-protection#8dd8e3eee5ecfff9e8e9e4e3fee4eae5f9fecde2f8f9e1e2e2e6a3eee2e0" class="btn-primary">Book a Discovery Call</a>
       <a href="tel:8323969990" class="btn-ghost" style="color: var(--gray-1);">832-396-9990</a>
     </div>
   </div>
@@ -1117,15 +1161,9 @@
       <div class="footer-tagline">Navigate What's Next — Houston, TX</div>
     </div>
     <div class="footer-contact">
-      <div><a href="mailto:Unchartedinsights@outlook.com">Unchartedinsights@outlook.com</a></div>
+      <div><a href="/cdn-cgi/l/email-protection#54013a373c35262031303d3a273d333c2027143b2120383b3b3f7a373b39"><span class="__cf_email__" data-cfemail="97c2f9f4fff6e5e3f2f3fef9e4fef0ffe3e4d7f8e2e3fbf8f8fcb9f4f8fa">[email&#160;protected]</span></a></div>
       <div><a href="tel:8323969990">832-396-9990</a></div>
       <div>Jim Read, Founder &amp; Principal Consultant</div>
     </div>
   </div>
-</footer>
-<div class="footer-bottom">© 2026 Uncharted Insights. All rights reserved.</div>
-
-<script>
-  // Nav scroll behavior
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', (
+</f
